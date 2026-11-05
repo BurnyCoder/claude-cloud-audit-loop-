@@ -1,0 +1,19 @@
+[project]
+name = "audit-loop"
+version = "0.1.0"
+description = "Run independent fact-check audits over many GitHub repos from inside one Claude Code session, until a dollar budget is spent."
+readme = "README.md"
+authors = [{ name = "Libor Burian" }]
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+audit-loop = "audit_loop.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["uv_build>=0.11.32,<0.12.0"]
+build-backend = "uv_build"
