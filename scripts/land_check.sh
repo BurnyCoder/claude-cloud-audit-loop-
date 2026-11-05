@@ -21,7 +21,8 @@ echo "--- files with most deletions:"
 git -C "$clone" diff --numstat "$default...HEAD" | sort -k2 -nr | head -3
 report=reports/audits/$name/round-$round.md
 [[ -f $report ]] || { echo "NO REPORT at $report"; exit 1; }
-git add "$report" && git commit -q -m "Add round-$round audit report for $name" -m "${AUDIT_COMMIT_TRAILER_TEXT:-}" || true
+trailer=$( (grep -E "^AUDIT_COMMIT_TRAILER=" .env 2>/dev/null || true) | cut -d= -f2- | sed "s/\\\\n/\\n/g")
+git add "$report" && git commit -q -m "Add round-$round audit report for $name" ${trailer:+-m "$trailer"} || true
 git push -q origin HEAD 2>&1 | tail -1
 echo "--- PR body:"
 uv run audit-loop pr-body "$slug" --round "$round"
