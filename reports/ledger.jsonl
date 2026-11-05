@@ -102,3 +102,4 @@
 {"time": "2026-11-05T05:50:41+00:00", "repo": "BurnyCoder/training-facts-into-llms", "round": 2, "status": "started"}
 {"time": "2026-11-05T05:50:43+00:00", "repo": "BurnyCoder/coherent-extrapolated-volition-system-prompt-alignment", "round": 2, "status": "started"}
 {"time": "2026-11-05T05:51:12+00:00", "repo": "BurnyCoder/security-monitoring-agent", "round": 2, "status": "merged", "cost_usd": 2.7857, "pr": "https://github.com/BurnyCoder/security-monitoring-agent/pull/4"}
+{"time": "2026-11-05T05:53:27+00:00", "repo": "BurnyCoder/steering-vectors-explained", "round": 2, "status": "merged", "cost_usd": 2.5902, "pr": "https://github.com/BurnyCoder/steering-vectors-explained/pull/5"}
