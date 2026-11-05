@@ -65,3 +65,5 @@
 {"time": "2026-11-05T05:20:48+00:00", "repo": "BurnyCoder/llms-take-autism-test", "round": 1, "status": "merged", "cost_usd": 2.14, "pr": "https://github.com/BurnyCoder/llms-take-autism-test/pull/1", "note": "squash-merged to drop old commit trailers"}
 {"time": "2026-11-05T05:20:52+00:00", "repo": "BurnyCoder/general-physics-attention-residuals-transformer", "round": 2, "status": "started"}
 {"time": "2026-11-05T05:20:52+00:00", "repo": "BurnyCoder/flow-matching-with-oscillatory-neural-networks-instead-of-transformer", "round": 2, "status": "started"}
+{"time": "2026-11-05T05:24:45+00:00", "repo": "BurnyCoder/hessian-training-for-looped-transformers", "round": 1, "status": "merged", "cost_usd": 2.927, "pr": "https://github.com/BurnyCoder/hessian-training-for-looped-transformers/pull/5"}
+{"time": "2026-11-05T05:24:45+00:00", "repo": "BurnyCoder/end-to-end-block-sparse-featurizers", "round": 2, "status": "started"}
