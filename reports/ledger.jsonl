@@ -69,3 +69,5 @@
 {"time": "2026-11-05T05:24:45+00:00", "repo": "BurnyCoder/end-to-end-block-sparse-featurizers", "round": 2, "status": "started"}
 {"time": "2026-11-05T05:29:02+00:00", "repo": "BurnyCoder/better-cancer-classification-with-machine-learning", "round": 1, "status": "merged", "cost_usd": 3.986, "pr": "https://github.com/BurnyCoder/better-cancer-classification-with-machine-learning/pull/34"}
 {"time": "2026-11-05T05:29:02+00:00", "repo": "BurnyCoder/mamba-neuron-mechanistic-interpretability", "round": 2, "status": "started"}
+{"time": "2026-11-05T05:29:44+00:00", "repo": "BurnyCoder/pacman-reinforcement-learning-neuron-mechanistic-interpretability", "round": 1, "status": "merged", "cost_usd": 3.6391, "pr": "https://github.com/BurnyCoder/pacman-reinforcement-learning-neuron-mechanistic-interpretability/pull/11"}
+{"time": "2026-11-05T05:29:44+00:00", "repo": "BurnyCoder/multi-agent-llm-self-play-reinforcement-learning-for-software-engineering", "round": 2, "status": "started"}
