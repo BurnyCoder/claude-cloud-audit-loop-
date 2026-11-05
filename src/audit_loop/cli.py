@@ -7,6 +7,7 @@ directory (see .env.example). Paths are relative to the current directory.
 import argparse
 import json
 import os
+import signal
 import sys
 from datetime import date
 from importlib.resources import files
@@ -131,6 +132,8 @@ def ledger_path(conf) -> Path:
 
 
 def main(argv=None):
+    if hasattr(signal, "SIGPIPE"):  # exit quietly when piped into head, as POSIX tools do
+        signal.signal(signal.SIGPIPE, signal.SIG_DFL)
     p = argparse.ArgumentParser(prog="audit-loop", description=__doc__.splitlines()[0])
     p.add_argument("--session", help="Claude Code session id (default: $CLAUDE_CODE_SESSION_ID)")
     sub = p.add_subparsers(dest="cmd", required=True)
