@@ -25,3 +25,7 @@
 {"time": "2026-11-05T04:51:35+00:00", "repo": "BurnyCoder/security-monitoring-agent", "round": 1, "status": "started"}
 {"time": "2026-11-05T04:52:43+00:00", "repo": "BurnyCoder/visualizing-grokking-modular-addition-in-transformer", "round": 1, "status": "merged", "cost_usd": 3.9645, "pr": "https://github.com/BurnyCoder/visualizing-grokking-modular-addition-in-transformer/pull/26"}
 {"time": "2026-11-05T04:52:43+00:00", "repo": "BurnyCoder/daily-agentic-news-on-any-topics", "round": 1, "status": "started"}
+{"time": "2026-11-05T04:56:00+00:00", "repo": "BurnyCoder/auto-but-actually-fact-checker-evaluator", "round": 1, "status": "merged", "cost_usd": 6.1631, "pr": "https://github.com/BurnyCoder/auto-but-actually-fact-checker-evaluator/pull/27"}
+{"time": "2026-11-05T04:56:00+00:00", "repo": "BurnyCoder/causal-counterfactual-analysis-of-convolutional-neural-networks-with-concept-swaps-interventions", "round": 1, "status": "merged", "cost_usd": 2.8373, "pr": "https://github.com/BurnyCoder/causal-counterfactual-analysis-of-convolutional-neural-networks-with-concept-swaps-interventions/pull/23"}
+{"time": "2026-11-05T04:56:00+00:00", "repo": "BurnyCoder/steering-vectors-explained", "round": 1, "status": "started"}
+{"time": "2026-11-05T04:56:01+00:00", "repo": "BurnyCoder/training-facts-into-llms", "round": 1, "status": "started"}
