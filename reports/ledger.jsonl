@@ -87,3 +87,5 @@
 {"time": "2026-11-05T05:40:14+00:00", "repo": "BurnyCoder/3d-firstperson-shooter-reinforcement-learning-selfplay", "round": 2, "status": "started"}
 {"time": "2026-11-05T05:41:31+00:00", "repo": "BurnyCoder/reinforcement-learning-locomotion-steering-vectors", "round": 2, "status": "merged", "cost_usd": 3.7989, "pr": "https://github.com/BurnyCoder/reinforcement-learning-locomotion-steering-vectors/pull/27"}
 {"time": "2026-11-05T05:41:31+00:00", "repo": "BurnyCoder/4d-snake-reinforcement-learning-agent", "round": 2, "status": "started"}
+{"time": "2026-11-05T05:43:06+00:00", "repo": "BurnyCoder/looped-transformers-llms-neuron-mechanistic-interpretability", "round": 2, "status": "merged", "cost_usd": 3.606, "pr": "https://github.com/BurnyCoder/looped-transformers-llms-neuron-mechanistic-interpretability/pull/11"}
+{"time": "2026-11-05T05:43:07+00:00", "repo": "BurnyCoder/deep-work-jarvis-waifu-supervisor", "round": 2, "status": "started"}
