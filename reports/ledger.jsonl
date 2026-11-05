@@ -57,3 +57,5 @@
 {"time": "2026-11-05T05:15:51+00:00", "repo": "BurnyCoder/workspace-bench-with-causal-interventions", "round": 1, "status": "merged", "cost_usd": 3.4731, "pr": "https://github.com/BurnyCoder/workspace-bench-with-causal-interventions/pull/5"}
 {"time": "2026-11-05T05:16:22+00:00", "repo": "BurnyCoder/geometrical-shape-fitting-in-llm-mechanistic-interpretability", "round": 1, "status": "started"}
 {"time": "2026-11-05T05:16:22+00:00", "repo": "BurnyCoder/hessian-training-for-looped-transformers", "round": 1, "status": "started"}
+{"time": "2026-11-05T05:18:16+00:00", "repo": "BurnyCoder/block-sparse-featurizer-experiments", "round": 1, "status": "merged", "cost_usd": 2.471, "pr": "https://github.com/BurnyCoder/block-sparse-featurizer-experiments/pull/6", "note": "squash-merged to drop old commit trailers"}
+{"time": "2026-11-05T05:18:16+00:00", "repo": "BurnyCoder/geometry-of-representations-of-mathematics-in-llms", "round": 1, "status": "started"}
