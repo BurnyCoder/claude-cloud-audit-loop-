@@ -59,3 +59,5 @@
 {"time": "2026-11-05T05:16:22+00:00", "repo": "BurnyCoder/hessian-training-for-looped-transformers", "round": 1, "status": "started"}
 {"time": "2026-11-05T05:18:16+00:00", "repo": "BurnyCoder/block-sparse-featurizer-experiments", "round": 1, "status": "merged", "cost_usd": 2.471, "pr": "https://github.com/BurnyCoder/block-sparse-featurizer-experiments/pull/6", "note": "squash-merged to drop old commit trailers"}
 {"time": "2026-11-05T05:18:16+00:00", "repo": "BurnyCoder/geometry-of-representations-of-mathematics-in-llms", "round": 1, "status": "started"}
+{"time": "2026-11-05T05:19:17+00:00", "repo": "BurnyCoder/multi-interval-habit-tracker", "round": 1, "status": "merged", "cost_usd": 1.1977, "pr": "https://github.com/BurnyCoder/multi-interval-habit-tracker/pull/1", "note": "squash-merged to drop old commit trailers"}
+{"time": "2026-11-05T05:19:17+00:00", "repo": "BurnyCoder/pacman-reinforcement-learning-neuron-mechanistic-interpretability", "round": 1, "status": "started"}
