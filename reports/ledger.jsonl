@@ -49,3 +49,5 @@
 {"time": "2026-11-05T05:12:04+00:00", "repo": "BurnyCoder/llm-steering-vectors-for-physics", "round": 1, "status": "started"}
 {"time": "2026-11-05T05:13:06+00:00", "repo": "BurnyCoder/coherent-extrapolated-volition-system-prompt-alignment", "round": 1, "status": "merged", "cost_usd": 4.143, "pr": "https://github.com/BurnyCoder/coherent-extrapolated-volition-system-prompt-alignment/pull/12"}
 {"time": "2026-11-05T05:13:06+00:00", "repo": "BurnyCoder/llms-take-autism-test", "round": 1, "status": "started"}
+{"time": "2026-11-05T05:14:03+00:00", "repo": "BurnyCoder/topological-data-analysis-mechanistic-interpretability-fix", "round": 1, "status": "merged", "cost_usd": 1.8061, "pr": "https://github.com/BurnyCoder/topological-data-analysis-mechanistic-interpretability-fix/pull/2"}
+{"time": "2026-11-05T05:14:03+00:00", "repo": "BurnyCoder/multi-interval-habit-tracker", "round": 1, "status": "started"}
