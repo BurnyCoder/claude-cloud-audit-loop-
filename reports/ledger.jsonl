@@ -3,3 +3,5 @@
 {"time": "2026-11-05T04:23:07+00:00", "repo": "BurnyCoder/flow-matching-with-oscillatory-neural-networks-instead-of-transformer", "round": 1, "status": "started"}
 {"time": "2026-11-05T04:23:07+00:00", "repo": "BurnyCoder/end-to-end-block-sparse-featurizers", "round": 1, "status": "started"}
 {"time": "2026-11-05T04:23:07+00:00", "repo": "BurnyCoder/mamba-neuron-mechanistic-interpretability", "round": 1, "status": "started"}
+{"time": "2026-11-05T04:27:30+00:00", "repo": "BurnyCoder/autoresearch-bootstrap", "round": 1, "status": "merged", "cost_usd": 1.4066, "pr": "https://github.com/BurnyCoder/autoresearch-bootstrap/pull/2"}
+{"time": "2026-11-05T04:27:38+00:00", "repo": "BurnyCoder/multi-agent-llm-self-play-reinforcement-learning-for-software-engineering", "round": 1, "status": "started"}
