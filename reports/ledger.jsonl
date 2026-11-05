@@ -82,3 +82,4 @@
 {"time": "2026-11-05T05:36:34+00:00", "repo": "BurnyCoder/geometry-of-representations-of-mathematics-in-llms", "round": 1, "status": "merged", "cost_usd": 4.045, "pr": "https://github.com/BurnyCoder/geometry-of-representations-of-mathematics-in-llms/pull/26"}
 {"time": "2026-11-05T05:36:58+00:00", "repo": "BurnyCoder/multi-agent-llm-self-play-reinforcement-learning-for-software-engineering", "round": 2, "status": "merged", "cost_usd": 2.4854, "pr": "https://github.com/BurnyCoder/multi-agent-llm-self-play-reinforcement-learning-for-software-engineering/pull/3"}
 {"time": "2026-11-05T05:36:58+00:00", "repo": "BurnyCoder/visualizing-grokking-modular-addition-in-transformer", "round": 2, "status": "started"}
+{"time": "2026-11-05T05:39:49+00:00", "repo": "BurnyCoder/auto-eureka-scientist-agent-harness", "round": 2, "status": "merged", "cost_usd": 3.3138, "pr": "https://github.com/BurnyCoder/auto-eureka-scientist-agent-harness/pull/23"}
