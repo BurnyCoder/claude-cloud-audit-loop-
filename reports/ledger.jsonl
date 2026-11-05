@@ -29,3 +29,5 @@
 {"time": "2026-11-05T04:56:00+00:00", "repo": "BurnyCoder/causal-counterfactual-analysis-of-convolutional-neural-networks-with-concept-swaps-interventions", "round": 1, "status": "merged", "cost_usd": 2.8373, "pr": "https://github.com/BurnyCoder/causal-counterfactual-analysis-of-convolutional-neural-networks-with-concept-swaps-interventions/pull/23"}
 {"time": "2026-11-05T04:56:00+00:00", "repo": "BurnyCoder/steering-vectors-explained", "round": 1, "status": "started"}
 {"time": "2026-11-05T04:56:01+00:00", "repo": "BurnyCoder/training-facts-into-llms", "round": 1, "status": "started"}
+{"time": "2026-11-05T04:59:58+00:00", "repo": "BurnyCoder/deep-work-jarvis-waifu-supervisor", "round": 1, "status": "merged", "cost_usd": 2.5666, "pr": "https://github.com/BurnyCoder/deep-work-jarvis-waifu-supervisor/pull/27"}
+{"time": "2026-11-05T04:59:58+00:00", "repo": "BurnyCoder/coherent-extrapolated-volition-system-prompt-alignment", "round": 1, "status": "started"}
