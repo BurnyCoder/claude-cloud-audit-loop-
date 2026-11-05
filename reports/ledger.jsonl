@@ -67,3 +67,5 @@
 {"time": "2026-11-05T05:20:52+00:00", "repo": "BurnyCoder/flow-matching-with-oscillatory-neural-networks-instead-of-transformer", "round": 2, "status": "started"}
 {"time": "2026-11-05T05:24:45+00:00", "repo": "BurnyCoder/hessian-training-for-looped-transformers", "round": 1, "status": "merged", "cost_usd": 2.927, "pr": "https://github.com/BurnyCoder/hessian-training-for-looped-transformers/pull/5"}
 {"time": "2026-11-05T05:24:45+00:00", "repo": "BurnyCoder/end-to-end-block-sparse-featurizers", "round": 2, "status": "started"}
+{"time": "2026-11-05T05:29:02+00:00", "repo": "BurnyCoder/better-cancer-classification-with-machine-learning", "round": 1, "status": "merged", "cost_usd": 3.986, "pr": "https://github.com/BurnyCoder/better-cancer-classification-with-machine-learning/pull/34"}
+{"time": "2026-11-05T05:29:02+00:00", "repo": "BurnyCoder/mamba-neuron-mechanistic-interpretability", "round": 2, "status": "started"}
