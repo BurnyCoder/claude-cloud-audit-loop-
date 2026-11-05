@@ -19,7 +19,8 @@ This repository is driven by a Claude Code session: the session is the orchestra
    3. `uv run audit-loop record <owner/name> --round <r> --status started`
    4. Spawn a **background `general-purpose` subagent**.
       - Its description must be exactly `audit <name> r<r>`. Spend attribution matches on it.
-      - Its prompt is the output of `uv run audit-loop prompt <owner/name> --round <r> --cap <usd>`. Cap by size of the claim surface (tracked md/tex/html files plus result files):
+      - Write the prompt to a file, `uv run audit-loop prompt <owner/name> --round <r> --cap <usd> > workdir/prompts/<name>-r<r>.md`. Give the subagent only a one-line prompt: "Your complete instructions are in `<absolute path>`; read that file first and follow it exactly." This keeps the orchestrator's context small.
+      - Cap by size of the claim surface (tracked md/tex/html files plus result files):
         - under 30 files: $3
         - under 120 files: $5
         - otherwise: $8
