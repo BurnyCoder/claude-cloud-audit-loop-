@@ -51,3 +51,5 @@
 {"time": "2026-11-05T05:13:06+00:00", "repo": "BurnyCoder/llms-take-autism-test", "round": 1, "status": "started"}
 {"time": "2026-11-05T05:14:03+00:00", "repo": "BurnyCoder/topological-data-analysis-mechanistic-interpretability-fix", "round": 1, "status": "merged", "cost_usd": 1.8061, "pr": "https://github.com/BurnyCoder/topological-data-analysis-mechanistic-interpretability-fix/pull/2"}
 {"time": "2026-11-05T05:14:03+00:00", "repo": "BurnyCoder/multi-interval-habit-tracker", "round": 1, "status": "started"}
+{"time": "2026-11-05T05:14:45+00:00", "repo": "BurnyCoder/llm-reinforcemen-learning-for-software-engineering", "round": 1, "status": "merged", "cost_usd": 2.7866, "pr": "https://github.com/BurnyCoder/llm-reinforcemen-learning-for-software-engineering/pull/5"}
+{"time": "2026-11-05T05:14:45+00:00", "repo": "BurnyCoder/better-cancer-classification-with-machine-learning", "round": 1, "status": "started"}
