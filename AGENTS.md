@@ -12,9 +12,9 @@ This repository is driven by a Claude Code session: the session is the orchestra
 ## Loop
 
 1. **Budget gate.** `uv run audit-loop spend --check` exits 3 once the session total reaches `AUDIT_BUDGET_USD - AUDIT_STOP_MARGIN_USD`, or once `AUDIT_STOP_AT` has passed. From then on, launch nothing new. Set the margin to at least the sum of the caps of the audits in flight. Running audits wrap up on their own at `AUDIT_BUDGET_USD - AUDIT_HARD_MARGIN_USD`.
-2. **Pick.** `uv run audit-loop next -n <free slots>`. It prints `owner/name round` lines. Run about 4 audits at a time.
+2. **Pick.** `uv run audit-loop next -n <free slots>`. It prints `owner/name round` lines. Run 4–7 audits at a time. On a 4-CPU cloud container, 7 worked; audits mostly wait on the API.
 3. **Launch each pick:**
-   1. **Cloud sessions only.** Make sure the session can push to the repository: call the `add_repo` tool with `access: "push"`, once per repository.
+   1. **Cloud sessions only.** Make sure the session can push to the repository: call the `add_repo` tool with `access: "push"`, once per repository. Without it the git proxy refuses pushes (HTTP 403). The platform may ask the user to confirm each add, whatever the permission settings, so add every repository in `repos.txt` in one batch at the start.
    2. `uv run audit-loop clone <owner/name> --round <r>` shallow-clones into `workdir/` and checks out `<prefix>/<date>-r<r>`.
    3. `uv run audit-loop record <owner/name> --round <r> --status started`
    4. Spawn a **background `general-purpose` subagent**.
@@ -36,6 +36,9 @@ This repository is driven by a Claude Code session: the session is the orchestra
 6. **After the stop line:** wait for running audits, land them, regenerate the report, and finish.
 
 ## Rules
+
+- If auto mode's safety check blocks launching an audit subagent, do not work around it. Ask the user to state explicitly that audit subagents may push fact-check fixes to their repositories, then continue.
+- If commits on an unmerged audit branch carry text the user does not want, such as trailers, squash-merge with a clean commit message. Do not rewrite or force-push history.
 
 - Keep the orchestrator's context small. Subagents put details in `reports/audits/<name>/round-<r>.md` and return at most 200 words.
 - Don't merge a branch you haven't looked at.
