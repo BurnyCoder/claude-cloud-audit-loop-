@@ -85,3 +85,5 @@
 {"time": "2026-11-05T05:39:49+00:00", "repo": "BurnyCoder/auto-eureka-scientist-agent-harness", "round": 2, "status": "merged", "cost_usd": 3.3138, "pr": "https://github.com/BurnyCoder/auto-eureka-scientist-agent-harness/pull/23"}
 {"time": "2026-11-05T05:40:13+00:00", "repo": "BurnyCoder/causal-counterfactual-analysis-of-convolutional-neural-networks-with-concept-swaps-interventions", "round": 2, "status": "started"}
 {"time": "2026-11-05T05:40:14+00:00", "repo": "BurnyCoder/3d-firstperson-shooter-reinforcement-learning-selfplay", "round": 2, "status": "started"}
+{"time": "2026-11-05T05:41:31+00:00", "repo": "BurnyCoder/reinforcement-learning-locomotion-steering-vectors", "round": 2, "status": "merged", "cost_usd": 3.7989, "pr": "https://github.com/BurnyCoder/reinforcement-learning-locomotion-steering-vectors/pull/27"}
+{"time": "2026-11-05T05:41:31+00:00", "repo": "BurnyCoder/4d-snake-reinforcement-learning-agent", "round": 2, "status": "started"}
