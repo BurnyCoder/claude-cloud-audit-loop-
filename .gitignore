@@ -5,3 +5,4 @@ __pycache__/
 .env
 workdir/
 repos.txt
+.claude/settings.local.json
