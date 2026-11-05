@@ -43,3 +43,5 @@
 {"time": "2026-11-05T05:05:00+00:00", "repo": "BurnyCoder/llm-reinforcemen-learning-for-software-engineering", "round": 1, "status": "started"}
 {"time": "2026-11-05T05:06:48+00:00", "repo": "BurnyCoder/training-facts-into-llms", "round": 1, "status": "merged", "cost_usd": 4.365, "pr": "https://github.com/BurnyCoder/training-facts-into-llms/pull/51"}
 {"time": "2026-11-05T05:06:48+00:00", "repo": "BurnyCoder/topological-data-analysis-mechanistic-interpretability-fix", "round": 1, "status": "started"}
+{"time": "2026-11-05T05:10:26+00:00", "repo": "BurnyCoder/jacobian-mem2gen", "round": 1, "status": "merged", "cost_usd": 2.6884, "pr": "https://github.com/BurnyCoder/jacobian-mem2gen/pull/7"}
+{"time": "2026-11-05T05:10:27+00:00", "repo": "BurnyCoder/block-sparse-featurizer-experiments", "round": 1, "status": "started"}
