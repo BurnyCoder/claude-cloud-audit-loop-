@@ -86,3 +86,14 @@ def test_prompt_renders_every_placeholder(tmp_path, monkeypatch, capsys):
     out = capsys.readouterr().out
     assert "owner/name" in out and "-r2" in out and "$5" in out and "Trailer-A: 1\nTrailer-B: 2" in out
     assert 'spend --agent "audit name r2"' in out and not re.search(r"\{[a-z_]+\}", out)
+
+
+def test_spend_check_stops_after_deadline(tmp_path, monkeypatch):
+    (tmp_path / "projects" / "p").mkdir(parents=True)
+    (tmp_path / "projects" / "p" / "sid.jsonl").write_text("")
+    monkeypatch.setenv("CLAUDE_CONFIG_DIR", str(tmp_path))
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setenv("AUDIT_STOP_AT", "2000-01-01T00:00:00")
+    assert cli.main(["--session", "sid", "spend", "--check"]) == cli.EXIT_BUDGET
+    monkeypatch.setenv("AUDIT_STOP_AT", "2999-01-01T00:00:00+00:00")
+    assert cli.main(["--session", "sid", "spend", "--check"]) == 0

@@ -9,7 +9,7 @@ import json
 import os
 import signal
 import sys
-from datetime import date
+from datetime import date, datetime, timezone
 from importlib.resources import files
 from pathlib import Path
 
@@ -18,7 +18,7 @@ from audit_loop import ledger, repos, report, spend
 DEFAULTS = {
     "AUDIT_BUDGET_USD": "250", "AUDIT_STOP_MARGIN_USD": "12", "AUDIT_CAP_USD": "6",
     "AUDIT_REPOS_FILE": "repos.txt", "AUDIT_WORKDIR": "workdir", "AUDIT_REPORTS_DIR": "reports",
-    "AUDIT_BRANCH_PREFIX": "fact-check", "AUDIT_PROMPT_FILE": "", "AUDIT_COMMIT_TRAILER": "", "AUDIT_PR_FOOTER": "",
+    "AUDIT_BRANCH_PREFIX": "fact-check", "AUDIT_PROMPT_FILE": "", "AUDIT_COMMIT_TRAILER": "", "AUDIT_PR_FOOTER": "", "AUDIT_STOP_AT": "",
 }
 EXIT_BUDGET = 3  # `spend --check` exit code once the stop line is reached
 
@@ -67,7 +67,15 @@ def cmd_spend(args, conf):
               f"left before stop ${stop_at - s['total']:.2f} | {s['files']} transcript files")
         for name, usd in sorted(s["by_agent"].items(), key=lambda kv: -kv[1]):
             print(f"  {usd:8.2f}  {name}")
-    return EXIT_BUDGET if args.check and s["total"] >= stop_at else 0
+    deadline = datetime.fromisoformat(conf["AUDIT_STOP_AT"]) if conf["AUDIT_STOP_AT"] else None
+    if deadline and not args.agent and not args.total:
+        print(f"deadline {deadline.isoformat()} ({'passed' if past(deadline) else 'not reached'})")
+    return EXIT_BUDGET if args.check and (s["total"] >= stop_at or (deadline and past(deadline))) else 0
+
+
+def past(deadline: datetime) -> bool:
+    """True once ``deadline`` (naive values are read as UTC) has passed."""
+    return datetime.now(timezone.utc) >= (deadline if deadline.tzinfo else deadline.replace(tzinfo=timezone.utc))
 
 
 def cmd_next(args, conf):
@@ -141,7 +149,7 @@ def main(argv=None):
     s.add_argument("--agent", help="print only this subagent description's spend")
     s.add_argument("--total", action="store_true", help="print only the session total")
     s.add_argument("--json", action="store_true")
-    s.add_argument("--check", action="store_true", help=f"exit {EXIT_BUDGET} once total >= budget - margin")
+    s.add_argument("--check", action="store_true", help=f"exit {EXIT_BUDGET} once total >= budget - margin or AUDIT_STOP_AT has passed")
     s = sub.add_parser("next", help="next repositories to audit, as 'owner/name round'")
     s.add_argument("-n", type=int, default=4)
     for name, helptext in (("clone", "clone/refresh a repo and check out its audit branch"),

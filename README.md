@@ -56,11 +56,12 @@ uv sync && uv run pytest -q
 
 | Command | What it does |
 |---|---|
-| `audit-loop spend [--check] [--agent DESC] [--total] [--json]` | List-price spend of this session: main thread plus each subagent. `--check` exits 3 at the stop line |
+| `audit-loop spend [--check] [--agent DESC] [--total] [--json]` | List-price spend of this session: main thread plus each subagent. `--check` exits 3 at the stop line or after `AUDIT_STOP_AT` |
 | `audit-loop next [-n N]` | Next `owner/name round` pairs: least-audited first, then list order, skipping audits in flight |
 | `audit-loop clone REPO --round R` | Shallow-clone or refresh into `workdir/`; check out `fact-check/<date>-rR` from the default branch |
 | `audit-loop prompt REPO --round R [--cap USD]` | Print the audit prompt with paths, branch, budget commands and commit trailer filled in |
 | `audit-loop record REPO --round R --status S [--pr URL]` | Append to `reports/ledger.jsonl`; the cost defaults to that audit's subagent spend |
+| `audit-loop pr-body REPO --round R` | Print a PR description: the report's Summary, its counts and a link to the full report |
 | `audit-loop report` | Regenerate `reports/summary.md` from the ledger and the report front-matter |
 
 Settings are listed in [.env.example](.env.example). Precedence: flags, then `AUDIT_*` environment variables, then `.env`.
@@ -81,6 +82,7 @@ Web search adds $10 per 1,000 searches. Models not in the table are priced as Op
 **Accuracy and caveats**
 - On this repository's own session, the result matched an independent `jq` sum of the same transcripts to the cent.
 - These figures are list-price estimates, not billing statements: fast mode and batch discounts are not modelled. That is why the loop stops `AUDIT_STOP_MARGIN_USD` below the budget.
+- For credits that expire, set `AUDIT_STOP_AT`; `spend --check` also exits 3 after that time.
 - Each audit's soft cap is enforced by the subagent itself, which checks `spend --agent` about every 20 tool calls, so an audit can overshoot its cap by a few calls.
 
 ## Safety

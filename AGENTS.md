@@ -11,7 +11,7 @@ This repository is driven by a Claude Code session: the session is the orchestra
 
 ## Loop
 
-1. **Budget gate.** `uv run audit-loop spend --check` exits 3 once the session total reaches `AUDIT_BUDGET_USD - AUDIT_STOP_MARGIN_USD`. From then on, launch nothing new.
+1. **Budget gate.** `uv run audit-loop spend --check` exits 3 once the session total reaches `AUDIT_BUDGET_USD - AUDIT_STOP_MARGIN_USD`, or once `AUDIT_STOP_AT` has passed. From then on, launch nothing new.
 2. **Pick.** `uv run audit-loop next -n <free slots>`. It prints `owner/name round` lines. Run about 4 audits at a time.
 3. **Launch each pick:**
    1. **Cloud sessions only.** Make sure the session can push to the repository: call the `add_repo` tool with `access: "push"`, once per repository.
@@ -25,11 +25,11 @@ This repository is driven by a Claude Code session: the session is the orchestra
         - under 120 files: $5
         - otherwise: $8
 4. **When an audit finishes:**
-   1. **Verify before landing:**
+   1. **Verify before landing:** `scripts/land_check.sh <owner/name> <r>` runs the checks below, commits and pushes the report, and prints the PR body.
       - `git -C workdir/<name> log --oneline origin/HEAD..HEAD` and `git -C workdir/<name> diff --stat origin/HEAD...HEAD`
       - Spot-check a few hunks.
       - Look closer if result/data files changed or there are large deletions. Prose should change to match data, never the reverse.
-   2. **If the branch was pushed:** open a PR with the report's Summary and Fixes as its body, then merge it with a merge commit. If the user wants to review first, leave it open.
+   2. **If the branch was pushed:** open a PR with the body from `uv run audit-loop pr-body <owner/name> --round <r>`, then merge it with a merge commit. If the user wants to review first, leave it open.
    3. `uv run audit-loop record <owner/name> --round <r> --status merged|no_changes|unmerged|failed --pr <url>`. The audit's cost is filled in automatically from its subagent transcript.
    4. `uv run audit-loop report`. Commit `reports/` and push.
 5. Repeat. Once every repository has finished round 1, `next` starts round 2. Audits are independent: never pass earlier findings to a new audit.
