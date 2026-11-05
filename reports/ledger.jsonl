@@ -76,3 +76,4 @@
 {"time": "2026-11-05T05:32:39+00:00", "repo": "BurnyCoder/geometrical-shape-fitting-in-llm-mechanistic-interpretability", "round": 1, "status": "merged", "cost_usd": 6.6495, "pr": "https://github.com/BurnyCoder/geometrical-shape-fitting-in-llm-mechanistic-interpretability/pull/9"}
 {"time": "2026-11-05T05:32:39+00:00", "repo": "BurnyCoder/end-to-end-block-sparse-featurizers", "round": 2, "status": "no_changes", "cost_usd": 3.878, "note": "0 errors in 215 claims"}
 {"time": "2026-11-05T05:32:40+00:00", "repo": "BurnyCoder/reinforcement-learning-locomotion-steering-vectors", "round": 2, "status": "started"}
+{"time": "2026-11-05T05:32:54+00:00", "repo": "BurnyCoder/auto-but-actually-fact-checker-evaluator", "round": 2, "status": "started"}
