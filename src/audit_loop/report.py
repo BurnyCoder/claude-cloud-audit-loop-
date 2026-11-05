@@ -64,5 +64,5 @@ def summary(entries: list[dict], reports_dir: Path, spend: dict | None = None, b
     if drift:
         out += ["## Hugging Face cards that differ from the repository copy", "",
                 "These hosted cards need re-uploading; each report gives the command.", "",
-                *(f"- [{s}](https://github.com/{s})" for s in drift), ""]
+                *(f"- [{s}](https://github.com/{s})" for s in dict.fromkeys(drift)), ""]
     return "\n".join(out)
