@@ -25,4 +25,4 @@ trailer=$( (grep -E "^AUDIT_COMMIT_TRAILER=" .env 2>/dev/null || true) | cut -d=
 git add "$report" && git commit -q -m "Add round-$round audit report for $name" ${trailer:+-m "$trailer"} || true
 git push -q origin HEAD 2>&1 | tail -1
 echo "--- PR body:"
-uv run audit-loop pr-body "$slug" --round "$round"
+[[ ${QUIET:-} ]] || uv run audit-loop pr-body "$slug" --round "$round"
