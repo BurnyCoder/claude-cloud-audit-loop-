@@ -16,7 +16,7 @@ from pathlib import Path
 from audit_loop import ledger, repos, report, spend
 
 DEFAULTS = {
-    "AUDIT_BUDGET_USD": "250", "AUDIT_STOP_MARGIN_USD": "12", "AUDIT_CAP_USD": "6",
+    "AUDIT_BUDGET_USD": "250", "AUDIT_STOP_MARGIN_USD": "12", "AUDIT_HARD_MARGIN_USD": "5", "AUDIT_CAP_USD": "6",
     "AUDIT_REPOS_FILE": "repos.txt", "AUDIT_WORKDIR": "workdir", "AUDIT_REPORTS_DIR": "reports",
     "AUDIT_BRANCH_PREFIX": "fact-check", "AUDIT_PROMPT_FILE": "", "AUDIT_COMMIT_TRAILER": "", "AUDIT_PR_FOOTER": "", "AUDIT_STOP_AT": "",
 }
@@ -92,7 +92,8 @@ def cmd_prompt(args, conf):
     template = Path(conf["AUDIT_PROMPT_FILE"]).read_text(encoding="utf-8") if conf["AUDIT_PROMPT_FILE"] \
         else files("audit_loop").joinpath("prompts/audit.md").read_text(encoding="utf-8")
     here, name = Path.cwd(), agent_name(args.repo, args.round)
-    stop_at = float(conf["AUDIT_BUDGET_USD"]) - float(conf["AUDIT_STOP_MARGIN_USD"])
+    # running audits wrap up at the hard line; the launch gate (stop margin) leaves room for them
+    stop_at = float(conf["AUDIT_BUDGET_USD"]) - float(conf["AUDIT_HARD_MARGIN_USD"])
     print(template.format(
         slug=args.repo, round=args.round, branch=branch_name(conf, args.round),
         clone_dir=Path(conf["AUDIT_WORKDIR"]).resolve() / args.repo.split("/")[1],

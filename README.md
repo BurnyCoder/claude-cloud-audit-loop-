@@ -81,7 +81,10 @@ Web search adds $10 per 1,000 searches. Models not in the table are priced as Op
 
 **Accuracy and caveats**
 - On this repository's own session, the result matched an independent `jq` sum of the same transcripts to the cent.
-- These figures are list-price estimates, not billing statements: fast mode and batch discounts are not modelled. That is why the loop stops `AUDIT_STOP_MARGIN_USD` below the budget.
+- Against the cloud credit balance shown to the user, the meter read about 3–4% low ($96–97 when the balance showed $101 spent). One plausible cause is that tool-internal model calls, such as WebFetch's page summarization, are not written to the transcripts. Leave margin for this.
+- These figures are list-price estimates, not billing statements: fast mode and batch discounts are not modelled. That is why there are two margins:
+  - the loop stops launching audits `AUDIT_STOP_MARGIN_USD` below the budget, which should be at least the caps of the audits in flight;
+  - running audits wrap up `AUDIT_HARD_MARGIN_USD` below it.
 - For credits that expire, set `AUDIT_STOP_AT`; `spend --check` also exits 3 after that time.
 - Each audit's soft cap is enforced by the subagent itself, which checks `spend --agent` about every 20 tool calls, so an audit can overshoot its cap by a few calls.
 

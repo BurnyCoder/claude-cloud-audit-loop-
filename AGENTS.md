@@ -11,7 +11,7 @@ This repository is driven by a Claude Code session: the session is the orchestra
 
 ## Loop
 
-1. **Budget gate.** `uv run audit-loop spend --check` exits 3 once the session total reaches `AUDIT_BUDGET_USD - AUDIT_STOP_MARGIN_USD`, or once `AUDIT_STOP_AT` has passed. From then on, launch nothing new.
+1. **Budget gate.** `uv run audit-loop spend --check` exits 3 once the session total reaches `AUDIT_BUDGET_USD - AUDIT_STOP_MARGIN_USD`, or once `AUDIT_STOP_AT` has passed. From then on, launch nothing new. Set the margin to at least the sum of the caps of the audits in flight. Running audits wrap up on their own at `AUDIT_BUDGET_USD - AUDIT_HARD_MARGIN_USD`.
 2. **Pick.** `uv run audit-loop next -n <free slots>`. It prints `owner/name round` lines. Run about 4 audits at a time.
 3. **Launch each pick:**
    1. **Cloud sessions only.** Make sure the session can push to the repository: call the `add_repo` tool with `access: "push"`, once per repository.
