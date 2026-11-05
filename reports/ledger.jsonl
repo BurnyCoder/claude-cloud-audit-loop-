@@ -92,3 +92,4 @@
 {"time": "2026-11-05T05:43:44+00:00", "repo": "BurnyCoder/mamba-neuron-mechanistic-interpretability", "round": 2, "status": "merged", "cost_usd": 6.0077, "pr": "https://github.com/BurnyCoder/mamba-neuron-mechanistic-interpretability/pull/8"}
 {"time": "2026-11-05T05:44:05+00:00", "repo": "BurnyCoder/security-monitoring-agent", "round": 2, "status": "started"}
 {"time": "2026-11-05T05:44:06+00:00", "repo": "BurnyCoder/daily-agentic-news-on-any-topics", "round": 2, "status": "started"}
+{"time": "2026-11-05T05:44:36+00:00", "repo": "BurnyCoder/auto-but-actually-fact-checker-evaluator", "round": 2, "status": "merged", "cost_usd": 3.3932, "pr": "https://github.com/BurnyCoder/auto-but-actually-fact-checker-evaluator/pull/28"}
