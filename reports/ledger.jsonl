@@ -55,3 +55,5 @@
 {"time": "2026-11-05T05:14:45+00:00", "repo": "BurnyCoder/better-cancer-classification-with-machine-learning", "round": 1, "status": "started"}
 {"time": "2026-11-05T05:15:30+00:00", "repo": "BurnyCoder/adapting-gradient-routing-adapter-finetuning-with-reward-hacking-probe-and-LLM-as-a-judge-monitors", "round": 1, "status": "merged", "cost_usd": 6.3423, "pr": "https://github.com/BurnyCoder/adapting-gradient-routing-adapter-finetuning-with-reward-hacking-probe-and-LLM-as-a-judge-monitors/pull/8"}
 {"time": "2026-11-05T05:15:51+00:00", "repo": "BurnyCoder/workspace-bench-with-causal-interventions", "round": 1, "status": "merged", "cost_usd": 3.4731, "pr": "https://github.com/BurnyCoder/workspace-bench-with-causal-interventions/pull/5"}
+{"time": "2026-11-05T05:16:22+00:00", "repo": "BurnyCoder/geometrical-shape-fitting-in-llm-mechanistic-interpretability", "round": 1, "status": "started"}
+{"time": "2026-11-05T05:16:22+00:00", "repo": "BurnyCoder/hessian-training-for-looped-transformers", "round": 1, "status": "started"}
