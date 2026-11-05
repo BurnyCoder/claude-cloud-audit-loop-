@@ -94,3 +94,4 @@
 {"time": "2026-11-05T05:44:06+00:00", "repo": "BurnyCoder/daily-agentic-news-on-any-topics", "round": 2, "status": "started"}
 {"time": "2026-11-05T05:44:36+00:00", "repo": "BurnyCoder/auto-but-actually-fact-checker-evaluator", "round": 2, "status": "merged", "cost_usd": 3.3932, "pr": "https://github.com/BurnyCoder/auto-but-actually-fact-checker-evaluator/pull/28"}
 {"time": "2026-11-05T05:45:15+00:00", "repo": "BurnyCoder/visualizing-grokking-modular-addition-in-transformer", "round": 2, "status": "merged", "cost_usd": 3.3401, "pr": "https://github.com/BurnyCoder/visualizing-grokking-modular-addition-in-transformer/pull/27"}
+{"time": "2026-11-05T05:45:32+00:00", "repo": "BurnyCoder/steering-vectors-explained", "round": 2, "status": "started"}
