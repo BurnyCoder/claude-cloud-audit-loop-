@@ -1,4 +1,4 @@
-"""Command line: ``audit-loop spend | next | clone | prompt | record | report``.
+"""Command line: ``audit-loop spend | next | clone | prompt | record | pr-body | report``.
 
 Settings come from flags, then ``AUDIT_*`` environment variables, then ``.env`` in the current
 directory (see .env.example). Paths are relative to the current directory.
@@ -17,7 +17,7 @@ from audit_loop import ledger, repos, report, spend
 DEFAULTS = {
     "AUDIT_BUDGET_USD": "250", "AUDIT_STOP_MARGIN_USD": "12", "AUDIT_CAP_USD": "6",
     "AUDIT_REPOS_FILE": "repos.txt", "AUDIT_WORKDIR": "workdir", "AUDIT_REPORTS_DIR": "reports",
-    "AUDIT_BRANCH_PREFIX": "fact-check", "AUDIT_PROMPT_FILE": "", "AUDIT_COMMIT_TRAILER": "",
+    "AUDIT_BRANCH_PREFIX": "fact-check", "AUDIT_PROMPT_FILE": "", "AUDIT_COMMIT_TRAILER": "", "AUDIT_PR_FOOTER": "",
 }
 EXIT_BUDGET = 3  # `spend --check` exit code once the stop line is reached
 
@@ -104,6 +104,19 @@ def cmd_record(args, conf):
     print(json.dumps(ledger.append(ledger_path(conf), **entry)))
 
 
+def cmd_pr_body(args, conf):
+    """PR description: the report's counts and Summary section, a link to the full report, a footer."""
+    path = report.report_path(Path(conf["AUDIT_REPORTS_DIR"]), args.repo, args.round)
+    meta, text = report.front_matter(path), path.read_text(encoding="utf-8")
+    summary = text.split("## Summary", 1)[1].split("\n## ", 1)[0].strip() if "## Summary" in text else ""
+    counts = ", ".join(f"{k.replace('_', ' ')}: {meta[k]}" for k in report.COUNTS if k in meta)
+    remote = repos.git("remote", "get-url", "origin").removesuffix(".git")
+    url = f"{remote}/blob/{repos.git('rev-parse', '--abbrev-ref', 'HEAD')}/{path.as_posix()}"
+    print(f"Independent fact-check audit, round {args.round}.\n\n{summary}\n\n**Counts:** {counts}\n\n"
+          f"Full report with every fix and its evidence: {url}\n\n"
+          + conf["AUDIT_PR_FOOTER"].replace("\\n", "\n"))
+
+
 def cmd_report(args, conf):
     reports_dir = Path(conf["AUDIT_REPORTS_DIR"])
     sid = args.session or os.environ.get("CLAUDE_CODE_SESSION_ID")
@@ -130,7 +143,8 @@ def main(argv=None):
     s.add_argument("-n", type=int, default=4)
     for name, helptext in (("clone", "clone/refresh a repo and check out its audit branch"),
                            ("prompt", "print the audit prompt for one repo"),
-                           ("record", "append a ledger entry")):
+                           ("record", "append a ledger entry"),
+                           ("pr-body", "print a PR description from the audit report")):
         s = sub.add_parser(name, help=helptext)
         s.add_argument("repo", help="owner/name")
         s.add_argument("--round", type=int, required=True)
@@ -143,7 +157,7 @@ def main(argv=None):
             s.add_argument("--note")
     sub.add_parser("report", help="write reports/summary.md")
     args = p.parse_args(argv)
-    return globals()[f"cmd_{args.cmd}"](args, settings()) or 0
+    return globals()[f"cmd_{args.cmd.replace('-', '_')}"](args, settings()) or 0
 
 
 if __name__ == "__main__":
