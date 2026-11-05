@@ -9,3 +9,5 @@
 {"time": "2026-11-05T04:37:09+00:00", "repo": "BurnyCoder/flow-matching-with-oscillatory-neural-networks-instead-of-transformer", "round": 1, "status": "merged", "cost_usd": 3.9971, "pr": "https://github.com/BurnyCoder/flow-matching-with-oscillatory-neural-networks-instead-of-transformer/pull/5"}
 {"time": "2026-11-05T04:37:16+00:00", "repo": "BurnyCoder/auto-eureka-scientist-agent-harness", "round": 1, "status": "started"}
 {"time": "2026-11-05T04:37:16+00:00", "repo": "BurnyCoder/reinforcement-learning-locomotion-steering-vectors", "round": 1, "status": "started"}
+{"time": "2026-11-05T04:38:15+00:00", "repo": "BurnyCoder/end-to-end-block-sparse-featurizers", "round": 1, "status": "merged", "cost_usd": 4.0523, "pr": "https://github.com/BurnyCoder/end-to-end-block-sparse-featurizers/pull/15"}
+{"time": "2026-11-05T04:38:15+00:00", "repo": "BurnyCoder/auto-but-actually-fact-checker-evaluator", "round": 1, "status": "started"}
