@@ -33,3 +33,5 @@
 {"time": "2026-11-05T04:59:58+00:00", "repo": "BurnyCoder/coherent-extrapolated-volition-system-prompt-alignment", "round": 1, "status": "started"}
 {"time": "2026-11-05T05:01:14+00:00", "repo": "BurnyCoder/security-monitoring-agent", "round": 1, "status": "merged", "cost_usd": 3.0036, "pr": "https://github.com/BurnyCoder/security-monitoring-agent/pull/3"}
 {"time": "2026-11-05T05:01:15+00:00", "repo": "BurnyCoder/adapting-gradient-routing-adapter-finetuning-with-reward-hacking-probe-and-LLM-as-a-judge-monitors", "round": 1, "status": "started"}
+{"time": "2026-11-05T05:02:10+00:00", "repo": "BurnyCoder/4d-snake-reinforcement-learning-agent", "round": 1, "status": "merged", "cost_usd": 5.2123, "pr": "https://github.com/BurnyCoder/4d-snake-reinforcement-learning-agent/pull/30"}
+{"time": "2026-11-05T05:02:11+00:00", "repo": "BurnyCoder/jacobian-mem2gen", "round": 1, "status": "started"}
