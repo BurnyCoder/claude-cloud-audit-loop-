@@ -71,3 +71,5 @@
 {"time": "2026-11-05T05:29:02+00:00", "repo": "BurnyCoder/mamba-neuron-mechanistic-interpretability", "round": 2, "status": "started"}
 {"time": "2026-11-05T05:29:44+00:00", "repo": "BurnyCoder/pacman-reinforcement-learning-neuron-mechanistic-interpretability", "round": 1, "status": "merged", "cost_usd": 3.6391, "pr": "https://github.com/BurnyCoder/pacman-reinforcement-learning-neuron-mechanistic-interpretability/pull/11"}
 {"time": "2026-11-05T05:29:44+00:00", "repo": "BurnyCoder/multi-agent-llm-self-play-reinforcement-learning-for-software-engineering", "round": 2, "status": "started"}
+{"time": "2026-11-05T05:31:59+00:00", "repo": "BurnyCoder/flow-matching-with-oscillatory-neural-networks-instead-of-transformer", "round": 2, "status": "merged", "cost_usd": 4.5903, "pr": "https://github.com/BurnyCoder/flow-matching-with-oscillatory-neural-networks-instead-of-transformer/pull/6"}
+{"time": "2026-11-05T05:31:59+00:00", "repo": "BurnyCoder/auto-eureka-scientist-agent-harness", "round": 2, "status": "started"}
