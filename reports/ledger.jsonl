@@ -17,3 +17,5 @@
 {"time": "2026-11-05T04:39:48+00:00", "repo": "BurnyCoder/visualizing-grokking-modular-addition-in-transformer", "round": 1, "status": "started"}
 {"time": "2026-11-05T04:47:57+00:00", "repo": "BurnyCoder/auto-eureka-scientist-agent-harness", "round": 1, "status": "merged", "cost_usd": 3.5518, "pr": "https://github.com/BurnyCoder/auto-eureka-scientist-agent-harness/pull/22"}
 {"time": "2026-11-05T04:47:57+00:00", "repo": "BurnyCoder/causal-counterfactual-analysis-of-convolutional-neural-networks-with-concept-swaps-interventions", "round": 1, "status": "started"}
+{"time": "2026-11-05T04:49:32+00:00", "repo": "BurnyCoder/3d-firstperson-shooter-reinforcement-learning-selfplay", "round": 1, "status": "started"}
+{"time": "2026-11-05T04:49:32+00:00", "repo": "BurnyCoder/4d-snake-reinforcement-learning-agent", "round": 1, "status": "started"}
