@@ -33,4 +33,4 @@ BurnyCoder/geometrical-shape-fitting-in-llm-mechanistic-interpretability
 BurnyCoder/hessian-training-for-looped-transformers
 BurnyCoder/geometry-of-representations-of-mathematics-in-llms
 BurnyCoder/pacman-reinforcement-learning-neuron-mechanistic-interpretability
-BurnyCoder/claude-cloud-audit-loop-
+BurnyCoder/claude-code-cloud-audit-loop

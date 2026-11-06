@@ -40,7 +40,7 @@ flowchart LR
 You need [uv](https://docs.astral.sh/uv/), git and Claude Code. The package uses only the Python standard library; pytest is a dev dependency.
 
 ```bash
-git clone https://github.com/BurnyCoder/claude-cloud-audit-loop- && cd claude-cloud-audit-loop-
+git clone https://github.com/BurnyCoder/claude-code-cloud-audit-loop && cd claude-code-cloud-audit-loop
 ```
 
 ```bash
