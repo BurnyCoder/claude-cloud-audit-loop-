@@ -120,6 +120,10 @@ STRIP_NEW_NAME=you STRIP_NEW_EMAIL=12345+you@users.noreply.github.com STRIP_OWNE
 
 That is a dry run. Add `--push` to publish. Rewriting changes commit IDs from the first edited commit onward, so re-clone, or run `git fetch && git reset --hard origin/<branch>` in every existing clone. Old commits stay visible in merged PR pages until GitHub garbage-collects them.
 
+If a repository fails verification or its push is rejected, the script prints `verification failed; not pushing <repo>` or `push failed for <repo>` and goes on to the next one. At the end it lists the failed repositories and exits with status 1.
+
+The script runs from Git Bash on Windows. Windows `python3` ends its output with `\r\n`, so the script strips the `\r`. It also decodes `git log` output as UTF-8 rather than with the locale codec (cp1252 on Windows). A repository that is already clean prints `identity 0->0, attribution lines 0->0, trees unchanged=yes, ref updates=0`, and git-filter-repo does not run on it.
+
 [reports/strip-attribution-repos.txt](reports/strip-attribution-repos.txt) lists the repositories of the first run. The cloud session's git proxy refused the force-push (HTTP 403), so run the script from your own machine.
 
 ## Results of runs

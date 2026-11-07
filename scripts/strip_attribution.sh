@@ -9,6 +9,8 @@
 # cloned, so nothing pushed meanwhile is overwritten. Other people's commits stay byte-identical.
 # Needs: git, git-filter-repo (`uv tool install git-filter-repo`), push rights, and a git host that
 # allows force-pushes. Afterwards re-clone or `git fetch && git reset --hard origin/<branch>` locally.
+# A repository that fails verification or push is reported and skipped; the exit status is then 1.
+# Works from Git Bash on Windows: python3's CRLF output is stripped, and git log is decoded as UTF-8.
 set -euo pipefail
 list=$1; push=${2:-}
 here=$(cd "$(dirname "$0")" && pwd); W=${STRIP_WORKDIR:-$PWD/strip-work}; mkdir -p "$W"/{bundles,logs,maps,repos}
@@ -23,13 +25,14 @@ import sys,re,os
 own=re.compile(os.environ['STRIP_OWNER_REGEX'],re.I); old=os.environ['STRIP_OLD_EMAIL']
 line=re.compile(r'^\s*(co-authored-by:\s*claude.*|claude-session:.*|.*generated with \[?claude code.*|https://claude\.ai/code/session_\S*\s*)$',re.I)
 ids=lines=0
-for r in sys.stdin.read().split('\x00'):
+for r in sys.stdin.buffer.read().decode('utf-8','surrogateescape').split('\x00'):  # not the locale codec
     if not r.strip(): continue
     who,rest=r.strip('\n').split('\x01',1); people,body=rest.split('\x02',1); ids+=people.lower().count(old)
     if own.search(who) or old in who.lower(): lines+=sum(1 for l in body.split('\n') if line.match(l))
-print(ids, lines)"; }
+print(ids, lines)" | tr -d '\r'; }  # Windows python3 prints "0 0\r\n"; "0\r" would fail the "00" checks
 trees() { git -C "$1" for-each-ref --format='%(refname)' refs/heads refs/tags | while read r; do echo "$r $(git -C "$1" rev-parse "$r^{tree}")"; done; }
-grep -v '^\s*#' "$list" | sed 's#https://github.com/##; s#\.git$##' | while read slug; do
+failed=()
+while read slug; do
   [ -n "$slug" ] || continue; n=${slug#*/}; d=$W/repos/$n; url=https://github.com/$slug.git
   rm -rf "$d"; git clone -q --bare "$url" "$d"
   git -C "$d" for-each-ref --format='%(refname) %(objectname)' refs/heads refs/tags > "$W/logs/$n.leases"
@@ -46,7 +49,9 @@ grep -v '^\s*#' "$list" | sed 's#https://github.com/##; s#\.git$##' | while read
     new=$(git -C "$d" rev-parse "$r"); [ "$new" = "$old" ] || { leases+=("--force-with-lease=$r:$old"); specs+=("$new:$r"); }
   done < "$W/logs/$n.leases"
   echo "$n: identity $ids0->$ids1, attribution lines $lines0->$lines1, trees unchanged=$same, ref updates=${#specs[@]}"
-  if [ "$ids1$lines1" != 00 ] || [ "$same" != yes ]; then echo "  verification failed; not pushing $n"; continue; fi
-  if [ "$push" = --push ] && [ ${#specs[@]} -gt 0 ]; then git -C "$d" push "${leases[@]}" "$url" "${specs[@]}"; fi
-done
+  if [ "$ids1$lines1" != 00 ] || [ "$same" != yes ]; then echo "  verification failed; not pushing $n"; failed+=("$n"); continue; fi
+  if [ "$push" = --push ] && [ ${#specs[@]} -gt 0 ]; then
+    git -C "$d" push "${leases[@]}" "$url" "${specs[@]}" || { echo "  push failed for $n"; failed+=("$n"); }; fi
+done < <(grep -v '^\s*#' "$list" | sed 's#https://github.com/##; s#\.git$##')  # no pipe: keeps $failed
 echo "Backups: $W/bundles/*.bundle (restore: git clone <bundle>); old->new SHAs: $W/maps/*.map"
+[ ${#failed[@]} -eq 0 ] || { echo "Failed (${#failed[@]}): ${failed[*]}"; exit 1; }
